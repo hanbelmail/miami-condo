@@ -1,0 +1,211 @@
+/* app/booking/booking.module.css */
+
+.page {
+  min-height: 100vh;
+  background: var(--sand);
+}
+
+/* ── NAV ──────────────────────────────────────────────── */
+.nav {
+  background: var(--ocean);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.logo:hover { color: var(--gold-lt); }
+.navTag {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.08);
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ── LAYOUT ───────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 40px;
+  padding: 48px 0 80px;
+  align-items: start;
+}
+
+/* ── SIDEBAR ──────────────────────────────────────────── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 90px;
+}
+.propertyCard {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.propertyImg {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.propertyInfo {
+  padding: 24px;
+}
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.propertyTitle {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--ocean);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.propertySub {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.stars { color: var(--gold); letter-spacing: 2px; }
+
+.benefitsCard {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+.benefitsTitle {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ocean);
+  margin-bottom: 20px;
+}
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.benefitIcon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.benefitText {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.hostCard {
+  background: var(--ocean);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.hostInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hostAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--ocean);
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.hostName {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.hostBadge {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--gold-lt);
+  margin-top: 2px;
+}
+
+/* ── WIDGET ───────────────────────────────────────────── */
+.widgetWrap {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.widgetHeader {
+  padding: 32px 32px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding-bottom: 24px;
+}
+.widgetTitle {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--ocean);
+  margin-bottom: 6px;
+}
+.widgetSub {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+.footer {
+  background: var(--ocean);
+  padding: 28px 0;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+}
+.footer a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+.footer a:hover { color: var(--gold); }
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}

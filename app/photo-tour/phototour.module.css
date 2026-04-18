@@ -1,0 +1,292 @@
+.container {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  color: #222;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.shareButton {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #222;
+}
+
+.categoryNav {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 65px;
+  background: #fff;
+  z-index: 99;
+}
+
+.categoryButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.categoryButton:hover {
+  background: #f7f7f7;
+}
+
+.categoryButton.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.sectionSubtitle {
+  font-size: 0.95rem;
+  color: #717171;
+  margin-bottom: 1.5rem;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.imageWrapper:hover {
+  transform: scale(1.02);
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── LIGHTBOX ──────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightboxClose {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.lightboxClose:hover {
+  opacity: 0.7;
+}
+
+.lightboxCounter {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1rem;
+  z-index: 1002;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.lightboxShare {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1002;
+  transition: opacity 0.2s;
+}
+
+.lightboxShare:hover {
+  opacity: 0.7;
+}
+
+.lightboxContent {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightboxNav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: #222;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  z-index: 1002;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.lightboxNav:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightboxPrev {
+  left: 20px;
+}
+
+.lightboxNext {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .lightboxNav {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    padding: 0.75rem 1rem;
+  }
+
+  .lightboxPrev {
+    left: 10px;
+  }
+
+  .lightboxNext {
+    right: 10px;
+  }
+
+  .lightboxClose {
+    top: 10px;
+    left: 10px;
+    font-size: 0.9rem;
+  }
+
+  .lightboxCounter {
+    top: 10px;
+    font-size: 0.9rem;
+  }
+
+  .lightboxShare {
+    top: 10px;
+    right: 10px;
+  }
+}
