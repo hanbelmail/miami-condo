@@ -1,13 +1,13 @@
 {
   "version": 2,
   "env": {
-    "META_CAPI_ACCESS_TOKEN": "@meta-capi-access-token"
+    "META_CAPI_ACCESS_TOKEN": "test_token"
   },
   "build": {
     "env": {
-      "NEXT_PUBLIC_META_PIXEL_ID": "@meta-pixel-id",
-      "NEXT_PUBLIC_GA4_MEASUREMENT_ID": "@ga4-measurement-id",
-      "NEXT_PUBLIC_SITE_URL": "@site-url"
+      "NEXT_PUBLIC_META_PIXEL_ID": "123456789",
+      "NEXT_PUBLIC_GA4_MEASUREMENT_ID": "G-TEST123",
+      "NEXT_PUBLIC_SITE_URL": "https://test.vercel.app"
     }
   }
 }
