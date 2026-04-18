@@ -7,7 +7,7 @@
     "env": {
       "NEXT_PUBLIC_META_PIXEL_ID": "123456789",
       "NEXT_PUBLIC_GA4_MEASUREMENT_ID": "G-TEST123",
-      "NEXT_PUBLIC_SITE_URL": "https://test.vercel.app"
+      "NEXT_PUBLIC_SITE_URL": "https://miami-condo.vercel.app"
     }
   }
 }
